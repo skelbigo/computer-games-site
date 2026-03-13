@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Олександра Осієвська, група IA-42" />
+    <meta name="description" content="Зв'яжіться з нами — контакти GameWorld">
+    <title>Комп'ютерні Ігри — Контакти</title>
+    <style>
+        .contact-links a {
+            color: #f59e0b !important;
+            font-weight: 600;
+        }
+
+        .contact-links a:hover {
+            color: #ec4899 !important;
+        }
+    </style>
+  </head>
+  <body link="#0b59d6" vlink="#7a3db8" alink="#ff5722" bgcolor="#eef5ff" background="images/bg-pattern.svg">
+    <header id="contacts-top">
+      <h1>Контакти</h1>
+      <ul>
+                <li><a href="index.html">Головна</a></li>
+        <li><a href="games.html">Ігри</a></li>
+        <li><a href="history.html">Історія</a></li>
+        <li><a href="contact.html" class="active">Контакти</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <h2>Про автора</h2>
+      <p><b>Автор:</b> Олександра Осієвська</p>
+      <p><b>Група:</b> IA-42</p>
+      <p id="github-line"><b>GitHub:</b> skelbigo</p>
+      <p>На цій сторінці зібрано коротку контактну інформацію автора та приклад форми зворотного зв'язку. Вебсторінка також містить <i>складну таблицю</i>, яка демонструє об'єднання комірок, групування стовпців та різні способи вирівнювання вмісту.</p>
+      <p>Для зручності навігації тут є посилання на окремі фрагменти сторінки, на інші сторінки сайту та на зовнішні інтернет-ресурси. Такі елементи допомагають краще організувати матеріал і зробити сайт більш зручним для перегляду.</p>
+
+      <p>
+        <a href="#github-line">Перейти до рядка GitHub на поточній сторінці</a><br />
+        <a href="index.html#images">Перейти до блоку з картинками на іншій сторінці</a><br />
+        <a href="https://github.com/" target="_blank">Перейти на GitHub</a>
+      </p>
+
+      <a href="images/contact_image.png" target="_blank">
+        <img src="images/contact_image.png" alt="Контакти" width="160" height="90" />
+      </a>
+
+      <h2>Форма зворотного зв'язку</h2>
+      <form>
+        <label>
+          Ваше ім'я:
+          <input type="text" name="name" />
+        </label>
+        <br /><br />
+        <label>
+          Повідомлення:
+          <br />
+          <textarea name="message" rows="5" cols="30"></textarea>
+        </label>
+        <br /><br />
+        <button type="submit">Надіслати</button>
+      </form>
+
+      <h2 id="complex-table">Корисні посилання</h2>
+      <table border="1" cellspacing="8" cellpadding="10" width="100%">
+        <caption><b>Ресурси для геймерів</b></caption>
+        <colgroup>
+          <col style="background-color: #eef7ff; width: 18%;" />
+          <col style="background-color: #fdfdfd; width: 27%;" />
+          <col span="2" style="background-color: #fff9ef; width: 27%;" />
+          <col style="background-color: #f4f0ff; width: 28%;" />
+        </colgroup>
+        <tr align="center" valign="middle">
+          <th>Ресурс</th>
+          <th>Опис</th>
+          <th>HTML-Посилання</th>
+        </tr>
+        <tr align="left" valign="top">
+          <td><b>Steam</b></td>
+          <td><b>Найбільша платформа цифрової дистрибуції ігор</b></td>
+          <td><a href="https://store.steampowered.com" target="_blank">store.steampowered.com</td>
+        </tr>
+        <tr align="center" valign="middle">
+          <td><b>IGN</b></td>
+          <td>Огляди та новини ігрової індустрії</td>
+          <td><a href="https://www.ign.com" target="_blank">ign.com</a></td>
+        </tr>
+        <tr align="right" valign="bottom">
+          <td><b>Reddit Gaming</b></td>
+          <td><b>Спільнота геймерів</b></td>
+          <td><a href="https://www.reddit.com/r/gaming" target="_blank">reddit.com/r/gaming</a></td>
+        </tr>
+      </table>
+    </main>
+
+    <footer>
+      <hr />
+      <p><a href="#contacts-top">Повернутися на початок сторінки</a></p>
+      <p>Автор: Олександра Осієвська, група IA-42</p>
+    </footer>
+  </body>
+</html>
