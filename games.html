@@ -1,80 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Oleksandra Osievska, group IA-42" />
-    <title>Computer games — Genres</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Олександра Осієвська">
+    <meta name="description" content="Каталог комп'ютерних ігор — RPG, FPS, Стратегії">
+    <title>GameWorld — Каталог Ігор</title>
+    <link rel="stylesheet" href="style.css">
+
     <style>
-      body { font-family: Arial, sans-serif; margin: 20px; }
-      nav, main, footer, header { background-color: rgba(255,255,255,0.88); padding: 10px; border-radius: 10px; }
-      img { border: 2px solid #355caa; border-radius: 8px; margin: 6px; }
-      table { background-color: rgba(255,255,255,0.95); }
+        a {
+            color: #f59e0b;
+            text-decoration: underline;
+        }
+        p.intro-games {
+            background-color: rgba(139, 92, 246, 0.1);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 1.05rem;
+        }
     </style>
-  </head>
-  <body link="#0b59d6" vlink="#7a3db8" alink="#ff5722" bgcolor="#eef5ff" background="images/bg-pattern.svg">
-    <header id="genres-top">
-      <h1>Жанри комп'ютерних ігор</h1>
-      <nav>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="games.html">Ігри</a></li>
+        <li><a href="history.html">Історія</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <h1>🎮 Каталог Ігор</h1>
+
+    <section>
+        <p class="intro-games">
+            Ласкаво просимо до каталогу ігор! Тут зібрані <strong>найкращі ігри</strong> за жанрами.
+            Натисніть на назву для отримання детальної інформації.
+        </p>
+        <p>
+            Перейти до: <a href="#rpg-section">RPG ігри</a> |
+            <a href="#fps-section">FPS ігри</a> |
+            <a href="#strategy-section">Стратегії</a> |
+            <a href="index.html">Головна сторінка</a> |
+            <a href="history.html#era-1990">Революція 3D (1990-ті)</a>
+        </p>
+    </section>
+
+    <section id="rpg-section">
+        <h2>⚔️ RPG — Рольові ігри</h2>
+        <p>
+            Рольові ігри дозволяють гравцям створювати власних персонажів та занурюватися
+            у <em>епічні пригоди</em> з розгалуженими сюжетами та великим відкритим світом.
+        </p>
+
+        <h3>The Witcher 3: Wild Hunt</h3>
+        <a href="images/witcher_image.png" target="_blank">
+            <img src="images/witcher_image.png" alt="The Witcher 3" width="300" height="200">
+        </a>
+        <p><em>(Зображення збільшено в 2 рази — натисніть для перегляду повного розміру)</em></p>
+        <p>
+            <strong>CD Projekt RED</strong> створили один із найкращих RPG-проєктів в історії.
+            Гравець керує Геральтом з Рівії у пошуках своєї вихованки.
+        </p>
+        <ul type="square">
+            <li>Понад <strong>100 годин</strong> основного сюжету</li>
+            <li><em>Відкритий світ</em> без завантажень</li>
+            <li>Системи моральних виборів</li>
+            <li>Два великих DLC: Blood and Wine, Hearts of Stone</li>
+        </ul>
+        <p><a href="https://www.thewitcher.com" target="_blank" class="highlight-link">→ Офіційний сайт The Witcher</a></p>
+
+        <h3>Baldur's Gate 3</h3>
+        <a href="images/baldurs_gate.png" target="_blank">
+            <img src="images/baldurs_gate.png" alt="Baldur's Gate 3" width="300" height="200">
+        </a>
+        <p>
+            <strong>Larian Studios</strong> повернули класичні RPG на новий рівень.
+            Гра отримала найвищі оцінки критиків у 2023 році.
+        </p>
+        <ol type="1">
+            <li>Покрокові бої на основі D&D 5e</li>
+            <li>Відкритий нелінійний сюжет</li>
+            <li>Кооперативний мультиплеєр до 4 гравців</li>
+            <li>Понад 174 години контенту</li>
+        </ol>
+    </section>
+
+    <section id="fps-section">
+        <h2>🔫 FPS — Шутери від першої особи</h2>
+        <p>
+            Шутери від першої особи — один із <em>найпопулярніших жанрів</em>.
+            Вони пропонують динамічний геймплей та змагання з іншими гравцями.
+        </p>
+
+        <h3>Counter-Strike 2</h3>
+        <a href="images/counter_strike.png" target="_blank">
+            <img src="images/counter_strike.png" alt="Counter-Strike 2" width="300" height="200">
+        </a>
+        <p><strong>Valve</strong> оновили легендарний шутер на двигуні <em>Source 2</em>.</p>
+        <ul type="circle">
+            <li>Оновлений двигун Source 2</li>
+            <li>Режим «Прем'єр» з рейтингом</li>
+            <li>Нова система диму та гранат</li>
+            <li>Free-to-play модель</li>
+        </ul>
+        <p><a href="https://www.counter-strike.net" target="_blank">→ Грати в CS2</a></p>
+    </section>
+
+    <section id="strategy-section">
+        <h2>♟️ Стратегії</h2>
+        <p>
+            Стратегічні ігри вимагають <em>логічного мислення, планування</em>
+            та ефективного управління ресурсами.
+        </p>
+
+        <h3>Civilization VI</h3>
+        <p>Покрокова стратегія, де ви будуєте цивілізацію від давніх часів до космічної ери.</p>
+
+        <dl>
+            <dt>Розробник</dt>
+            <dd>Firaxis Games / 2K Games</dd>
+
+            <dt>Жанр</dt>
+            <dd>Покрокова стратегія 4X</dd>
+
+            <dt>Платформи</dt>
+            <dd>PC, PlayStation, Xbox, Nintendo Switch, iOS, Android</dd>
+
+            <dt>Рік випуску</dt>
+            <dd>2016 (оновлення 2019–2024)</dd>
+        </dl>
+
+        <ol type="I">
+            <li>Дослідження нових технологій</li>
+            <li>Побудова міст та чудес світу</li>
+            <li>Дипломатія з іншими цивілізаціями</li>
+            <li>Ведення воєн і завоювань</li>
+        </ol>
+    </section>
+
+</div>
+
+<footer>
+    <p>
+        &copy; 2026 GameWorld — Автор: <strong>Олександра Осієвська</strong> |
         <a href="index.html">Головна</a> |
-        <a href="genres.html">Жанри</a> |
-        <a href="top-games.html">Топ ігор</a> |
-        <a href="contacts.html">Контакти</a>
-      </nav>
-      <hr />
-    </header>
+        <a href="games.html">Ігри</a> |
+        <a href="history.html">Історія</a> |
+        <a href="contact.html">Контакти</a>
+    </p>
+</footer>
 
-    <main>
-      <h2 id="popular-genres">Популярні жанри</h2>
-      <p>Жанр допомагає зрозуміти, <b>який ігровий досвід</b> отримає користувач. Одні ігри орієнтуються на швидкість реакції, інші — на сюжет, розвиток персонажа або уважне планування ресурсів.</p>
-      <p>У сучасній індустрії жанри часто <i>поєднуються між собою</i>. Наприклад, рольова гра може містити елементи бойовика, а стратегія — симулятора керування або будівництва.</p>
-      <p id="genre-note">Правильне визначення жанру полегшує вибір гри, адже гравець одразу розуміє, чи буде тут акцент на пригодах, командній грі, виживанні або творчості.</p>
-
-      <h3 id="action-section">Приклади жанрів</h3>
-      <ol type="I">
-        <li><b>Action</b> — швидка реакція, бій, динаміка.</li>
-        <li id="rpg-section"><b>RPG</b> — розвиток персонажа, сюжет, квести.</li>
-        <li><b>Strategy</b> — планування, тактика, керування ресурсами.</li>
-        <li><b>Simulation</b> — імітація реальних процесів та систем.</li>
-        <li><b>Horror</b> — атмосфера страху та напруги.</li>
-      </ol>
-
-      <h3>Посилання</h3>
-      <p>
-        <a href="#genre-note">Перейти до абзацу на поточній сторінці</a><br />
-        <a href="top-games.html#games-table">Перейти до таблиці на іншій сторінці</a><br />
-        <a href="https://store.steampowered.com/category/rpg/" target="_blank">Перейти до сторінки RPG в інтернеті</a>
-      </p>
-
-      <h3>Маркерований список піджанрів</h3>
-      <ul type="circle">
-        <li>JRPG</li>
-        <li>Roguelike</li>
-        <li>MOBA</li>
-        <li>Metroidvania</li>
-      </ul>
-
-      <h3>Словник термінів</h3>
-      <dl>
-        <dt><b>Квест</b></dt>
-        <dd>Завдання, яке виконує гравець для просування сюжету або отримання нагороди.</dd>
-        <dt><b>Локація</b></dt>
-        <dd>Частина ігрового світу, де відбуваються події та взаємодія з об'єктами.</dd>
-      </dl>
-
-      <h3>Тематичні зображення</h3>
-      <a href="images/rpg-world.svg" target="_blank">
-        <img src="images/rpg-world.svg" alt="RPG світ" width="320" height="180" />
-      </a>
-      <a href="images/esports.svg" target="_blank">
-        <img src="images/esports.svg" alt="Кіберспорт" width="160" height="90" />
-      </a>
-    </main>
-
-    <footer>
-      <hr />
-      <p><a href="#genres-top">Повернутися на початок сторінки</a></p>
-      <p>Author: Oleksandra Osievska, group IA-42</p>
-    </footer>
-  </body>
+</body>
 </html>

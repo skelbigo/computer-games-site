@@ -1,237 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Олександра Осієвська, група IA-422" />
-    <meta name="description" content="Комп'ютерні Ігри — головна сторінка сайту про ігрову індустрію">
-    <title>Комп'ютерні Ігри — Головна</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+і    <meta name="author" content="Олександра Осієвська">
+    <meta name="description" content="GameWorld — головна сторінка сайту про комп'ютерні ігри">
+    <title>GameWorld — Комп'ютерні Ігри</title>
+    <link rel="stylesheet" href="style.css">
+
     <style>
-      body { font-family: Arial, sans-serif; margin: 20px; }
-      nav, main, footer, header { background-color: rgba(255,255,255,0.88); padding: 10px; border-radius: 10px; }
-      img { border: 2px solid #355caa; border-radius: 8px; margin: 6px; }
-      table { background-color: rgba(255,255,255,0.95); }
+        a {
+            color: #f59e0b;
+            text-decoration: underline;
+        }
+        p.internal-style {
+            color: #06b6d4;
+            font-style: italic;
+            border-left: 3px solid #06b6d4;
+            padding-left: 12px;
+            margin: 10px 0;
+        }
     </style>
-  </head>
-  <body link="#0b59d6" vlink="#7a3db8" alink="#ff5722" bgcolor="#eef5ff" background="images/bg-pattern.svg">
-    <header id="top">
-      <h1>Комп'ютерні ігри</h1>
-      <nav>
-        <a href="index.html">Головна</a> |
-        <a href="games.html">Ігри</a> |
-        <a href="history.html">Історія</a> |
-        <a href="contacts.html">Контакти</a>
-      </nav>
-      <hr />
-    </header>
+</head>
+<body>
 
-    <main>
-      <h1>Світ Комп'ютерних Ігор</h1>
-      <p>Ласкаво просимо до <b>GameWorld</b> — вашого путівника у захоплюючий всесвіт відеоігор.
-           Дізнайтеся про <i>найкращі ігри</i>, їх історію та майбутнє ігрової індустрії.</p>
-        <a href="#about" class="btn btn-primary">Дізнатися більше</a>
-        <a href="games.html" class="btn btn-secondary" style="margin-left: 12px;">Каталог ігор</a>
+<nav>
+    <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="games.html">Ігри</a></li>
+        <li><a href="history.html">Історія</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+    </ul>
+</nav>
 
-      <div class="container">
-        <img src="images/hero_banner.png" alt="Герой банер — ігровий світ" class="hero-banner img-responsive" width="1200" height="400">
-      </div>
+<div class="container">
 
-      <div class="container" id="about">
+    <h1 id="main-title">🎮 GameWorld — Світ Комп'ютерних Ігор</h1>
+
+    <section>
+        <h2>Ласкаво просимо</h2>
+
+        <p class="internal-style">
+            <strong>GameWorld</strong> — ваш провідник у захоплюючий всесвіт відеоігор. Тут ви знайдете огляди, <em>історію</em> та наші контакти.
+        </p>
+
+        <p>
+            Комп'ютерні ігри стали невід'ємною частиною сучасної культури. Від простих аркад
+            <strong>1970-х років</strong> до складних <em>відкритих світів</em> — ігрова індустрія
+            пройшла величезний шлях розвитку.
+        </p>
+
+        <p>
+            <a href="#about">↓ Дізнатися більше про нас</a> |
+            <a href="games.html">Перейти до каталогу ігор</a> |
+            <a href="history.html#era-1970">Читати про 1970-ті</a> |
+            <a href="https://uk.wikipedia.org/wiki/Відеогра" target="_blank">Вікіпедія про відеоігри</a>
+        </p>
+    </section>
+
+    <section>
+        <h2>Банер сайту</h2>
+        <figure>
+            <a href="images/hero_banner.png" target="_blank">
+                <img src="images/hero_banner.png" alt="Банер GameWorld" width="600" height="200">
+            </a>
+            <figcaption><em>Натисніть на зображення, щоб відкрити у повному розмірі (600×200 — зменшено в 2 рази)</em></figcaption>
+        </figure>
+    </section>
+
+    <section id="about">
         <h2>Про нас</h2>
-      <p style="color: #ec4899; font-size: 1.15rem; border-left: 3px solid #ec4899; padding-left: 16px;">
-            <b>GameWorld</b> — це ресурс для всіх, хто захоплюється <i>комп'ютерними іграми</i>. Ми збираємо
-            найактуальнішу інформацію зі світу гейм-індустрії.
+        <p>
+            <strong>GameWorld</strong> — це ресурс для всіх, хто захоплюється <em>комп'ютерними іграми</em>.
+            Ми збираємо найактуальнішу інформацію зі світу гейм-індустрії.
         </p>
-
-      <p>Комп'ютерні ігри стали одним із найпопулярніших видів розваг у сучасному світі. Від простих
-           аркадних ігор <b>1970-х років</b> до складних <i>MMORPG</i> та реалістичних симуляцій —
-           ігрова індустрія пройшла довгий шлях.</p>
-           
-      <p>На нашому сайті ви знайдете:
-           огляди найкращих ігор (перейдіть на <a href="games.html">сторінку ігор</a>),
-           <a href="history.html#era-1970">історію розвитку відеоігор</a> з 1970-х років,
-           та зможете <a href="contact.html#feedback">зв'язатися з нами</a>.
-           Дізнайтеся більше на <a href="https://uk.wikipedia.org/wiki/Відеогра" target="_blank" style="color: #f59e0b !important;">Вікіпедії</a>.
+        <p>
+            На нашому сайті ви знайдете огляди найкращих ігор
+            (<a href="games.html" class="highlight-link">сторінка ігор</a>),
+            <a href="history.html#era-1970">історію відеоігор з 1970-х</a>,
+            та <a href="contact.html#feedback">зв'язок з нами</a>.
         </p>
-        
-      <h2 id="genres">Жанри ігор</h2>
-      
-      <a href="images/game_genres.png" target="_blank">
-        <img src="images/game_genres.png" alt="Жанри ігор — RPG, FPS, Strategy"
-          width="256" height="256" class="img-responsive float-left">
-      </a>
-      <p>Існує безліч <b>жанрів комп'ютерних ігор</b>, кожен з яких пропонує унікальний досвід.
-        <span class="highlight-text">RPG</span> дозволяють гравцям занурюватися у фантастичні світи
-        та розвивати своїх персонажів.</p>
+    </section>
 
-      <p><span class="highlight-text">FPS</span> (шутери від першої особи) пропонують динамічний
-        геймплей та змагання з іншими гравцями. <i>Стратегії</i> вимагають логічного мислення
-        та планування. Перегляньте наш <a href="games.html#rpg-section">каталог RPG ігор</a> для деталей.</p>
+    <section>
+        <h2>Жанри та платформи</h2>
 
-      <h2>Популярні платформи</h2>
-      <h3>Ігрові платформи</h3>
-      <ul type="disc">
-        <li><b>PC (Windows, Linux, macOS)</b> — найбільша
-            <a href="https://store.steampowered.com" target="_blank">бібліотека ігор на Steam</a></li>
-        <li>PlayStation 5</li>
-        <li>Xbox Series X|S</li>
-        <li>Nintendo Switch</li>
-      </ul>  
-      <p>Мобільні платформи:</p>
-        <ul type="circle">
-          <li>Android</li>
-          <li>iOS</li>
+        <h3>🎯 Популярні жанри (маркований список, type disc)</h3>
+        <ul type="disc">
+            <li><strong>RPG</strong> — рольові ігри з розгалуженими сюжетами</li>
+            <li><strong>FPS</strong> — шутери від першої особи</li>
+            <li><em>Стратегії</em> — вимагають логічного мислення</li>
+            <li>Пригодницькі ігри</li>
         </ul>
 
-      <p>VR-платформи:</p>
-        <ul type="square">
-          <li>Meta Quest 3</li>
-          <li>PlayStation VR2</li>
-          <li>Valve Index</li>
-        </ul>
-
-      <h3>Топ жанрів</h3>
+        <h3>🏆 Топ ігор 2024 (нумерований список, type 1)</h3>
         <ol type="1">
-          <li>RPG (Рольові ігри)</li>
-          <li>FPS (Шутери)</li>
-          <li>Стратегії</li>
-          <li>Спортивні</li>
-          <li>Пригодницькі</li>
+            <li>Baldur's Gate 3 — найкраща гра року</li>
+            <li>Alan Wake 2</li>
+            <li>Spider-Man 2</li>
+            <li>Starfield</li>
         </ol>
 
-      <p>За популярністю серед молоді:</p>
+        <h3>🔤 Нумерація літерами (type A)</h3>
         <ol type="A">
-          <li>Fortnite</li>
-          <li>Minecraft</li>
-          <li>Roblox</li>
+            <li>PC — найбільша бібліотека ігор</li>
+            <li>PlayStation 5</li>
+            <li>Xbox Series X</li>
         </ol>
 
-      <p>Класичні серії:</p>
-        <ol type="i">
-          <li>The Legend of Zelda</li>
-          <li>Final Fantasy</li>
-          <li>Super Mario</li>
-        </ol>
-        
-    <h3>Глосарій геймера</h3>
-      <dl>
-        <dt>FPS (Frames Per Second)</dt>
-        <dd>Кількість кадрів на секунду — показник плавності гри.</dd>
+        <h3>📖 Глосарій геймера (список визначень)</h3>
+        <dl>
+            <dt>FPS (Frames Per Second)</dt>
+            <dd>Кількість кадрів на секунду — показник плавності гри.</dd>
 
-        <dt>MMORPG</dt>
-        <dd>Масова багатокористувацька онлайн рольова гра.</dd>
+            <dt>MMORPG</dt>
+            <dd>Масова багатокористувацька онлайн рольова гра.</dd>
 
-        <dt>E-sport</dt>
-        <dd>Кіберспорт — змагання між гравцями на професійному рівні.</dd>
+            <dt>E-sport</dt>
+            <dd>Кіберспорт — змагання між гравцями на професійному рівні.</dd>
 
-        <dt>Mod</dt>
-        <dd>Модифікація гри, створена спільнотою для додавання нового контенту.</dd>
-      </dl>
+            <dt>Mod</dt>
+            <dd>Модифікація гри, створена спільнотою для додавання нового контенту.</dd>
+        </dl>
+    </section>
 
-    <h2>Порівняння ігор — Таблиця 3×4</h2>
-        <table>
-          <caption>Три популярні ігри — зображення, посилання та опис</caption>
-            <thead>
-              <tr>
-                <th>The Witcher 3</th>
-                <th>Cyberpunk 2077</th>
-                <th>Minecraft</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><img src="images/game_cards.png" alt="Game Cards" width="150" height="100" style="border-radius: 8px;"></td>
-                <td><img src="images/game_genres.png" alt="Genres" width="150" height="100" style="border-radius: 8px;"></td>
-                <td><img src="images/hero_banner.png" alt="Banner" width="150" height="100" style="border-radius: 8px;"></td>
-              </tr>
-              <tr>
-                <td><a href="https://www.thewitcher.com" target="_blank">Офіційний сайт</a></td>
-                <td><a href="https://www.cyberpunk.net" target="_blank">Офіційний сайт</a></td>
-                <td><a href="https://www.minecraft.net" target="_blank">Офіційний сайт</a></td>
-              </tr>
-              <tr>
-                <td><b>RPG</b> з відкритим світом. Один із найкращих сюжетів в іграх.</td>
-                <td><b>Action-RPG</b> у футуристичному місті. <i>Неперевершена атмосфера.</i></td>
-                td><b>Sandbox</b> гра. Будуй, досліджуй, вижиай. <i>Безмежні можливості!</i></td>
-              </tr>
-          </tbody>
-        </table> 
-        
-    <h2>Ігрова статистика</h2>
-        <table cellspacing="0" cellpadding="12">
-            <caption>Детальна ігрова статистика з об'єднаними комірками</caption>
-            <colgroup>
-                <col style="background-color: rgba(139, 92, 246, 0.08); width: 20%;">
-                <col style="width: 25%;">
-                <col style="width: 25%;">
-                <col style="background-color: rgba(6, 182, 212, 0.05); width: 30%;">
-            </colgroup>
+    <section>
+        <h2>Галерея</h2>
+        <p>Натисніть на зображення, щоб відкрити у повному розмірі:</p>
+
+        <figure style="display:inline-block; margin: 10px;">
+            <a href="images/game_genres.png" target="_blank">
+                <img src="images/game_genres.png" alt="Жанри ігор — збільшено" width="512" height="512">
+            </a>
+            <figcaption><em>Збільшено в 2 рази (512×512)</em></figcaption>
+        </figure>
+
+        <figure style="display:inline-block; margin: 10px;">
+            <a href="images/game_genres.png" target="_blank">
+                <img src="images/game_genres.png" alt="Жанри ігор — зменшено" width="128" height="128">
+            </a>
+            <figcaption><em>Зменшено в 2 рази (128×128)</em></figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Популярні ігри — Таблиця 3×4</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <caption>Три популярні ігри — зображення, посилання та опис</caption>
             <thead>
                 <tr>
-                    <th rowspan="2" style="vertical-align: middle;">Категорія</th>
-                    <th colspan="2" style="text-align: center;">Платформа</th>
-                    <th rowspan="2" style="vertical-align: middle;">Загальна оцінка</th>
-                </tr>
-                <tr>
-                    <th>PC</th>
-                    <th>Console</th>
+                    <th>The Witcher 3</th>
+                    <th>Cyberpunk 2077</th>
+                    <th>Minecraft</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td rowspan="2"><b>RPG</b></td>
-                    <td style="text-align: center;">95/100</td>
-                    <td style="text-align: center;">92/100</td>
-                    <td rowspan="2" style="text-align: center; color: #10b981;"><b>Відмінно</b></td>
+                    <td><img src="images/witcher_image.png" alt="The Witcher 3" width="150" height="100"></td>
+                    <td><img src="images/cyberpunk.png" alt="Cyberpunk 2077" width="150" height="100"></td>
+                    <td><img src="images/minecraft.png" alt="Minecraft" width="150" height="100"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;">120+ годин</td>
-                    <td style="text-align: left;">100+ годин</td>
+                    <td><a href="https://www.thewitcher.com" target="_blank">Офіційний сайт Witcher</a></td>
+                    <td><a href="https://www.cyberpunk.net" target="_blank">Офіційний сайт Cyberpunk</a></td>
+                    <td><a href="https://www.minecraft.net" target="_blank">Офіційний сайт Minecraft</a></td>
                 </tr>
                 <tr>
-                    <td><b>FPS</b></td>
-                    <td colspan="2" style="text-align: center;">Кросплатформенна гра — 88/100</td>
-                    <td style="text-align: center; color: #f59e0b;"><b>Добре</b></td>
-                </tr>
-                <tr>
-                    <td><b>Стратегії</b></td>
-                    <td style="text-align: center;">91/100</td>
-                    <td style="text-align: center; color: var(--text-muted);">Не доступно</td>
-                    <td style="text-align: center; color: #06b6d4;"><b>Чудово</b></td>
+                    <td><strong>RPG</strong> з відкритим світом. Один із найкращих сюжетів в іграх.</td>
+                    <td><strong>Action-RPG</strong> у футуристичному місті. <em>Неперевершена атмосфера.</em></td>
+                    <td><strong>Sandbox</strong> гра. Будуй, досліджуй, виживай. <em>Безмежні можливості!</em></td>
                 </tr>
             </tbody>
         </table>
+    </section>
 
-      <h2>Вікіпедія — Відеоігри</h2>
-        <p>Нижче ви можете переглянути статтю з Вікіпедії прямо на нашому сайті:</p>
-        <div class="iframe-container">
-            <iframe src="https://uk.wikipedia.org/wiki/Відеогра" width="100%" height="500"
-                    title="Вікіпедія — Відеогра"></iframe>
+    <section>
+        <h2>Ігрова статистика — Складна таблиця</h2>
+        <table border="1" cellpadding="10" cellspacing="2">
+            <caption>Детальна статистика жанрів — colspan/rowspan/colgroup</caption>
+            <colgroup>
+                <col style="background-color: rgba(139,92,246,0.12); width: 20%;">
+                <col style="background-color: rgba(6,182,212,0.07); width: 20%;">
+                <col style="background-color: rgba(6,182,212,0.07); width: 20%;">
+                <col style="background-color: rgba(16,185,129,0.07); width: 20%;">
+                <col style="background-color: rgba(16,185,129,0.07); width: 20%;">
+            </colgroup>
+            <thead>
+                <tr align="center">
+                    <th rowspan="2">Жанр</th>
+                    <th colspan="2">PC</th>
+                    <th colspan="2">Console</th>
+                </tr>
+                <tr align="center">
+                    <th>Оцінка</th>
+                    <th>Час (год.)</th>
+                    <th>Оцінка</th>
+                    <th>Час (год.)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr align="left">
+                    <td rowspan="2"><strong>RPG</strong></td>
+                    <td align="center">95/100</td>
+                    <td align="right">120+</td>
+                    <td align="center">92/100</td>
+                    <td align="right">100+</td>
+                </tr>
+                <tr align="left">
+                    <td align="center"><em>Відмінно</em></td>
+                    <td colspan="2" align="center">Кросплатформна підтримка</td>
+                    <td align="center"><em>Чудово</em></td>
+                </tr>
+                <tr align="center">
+                    <td><strong>FPS</strong></td>
+                    <td>88/100</td>
+                    <td>50+</td>
+                    <td colspan="2">Кросплатформенна — 85/100</td>
+                </tr>
+                <tr align="right">
+                    <td><strong>Стратегії</strong></td>
+                    <td>91/100</td>
+                    <td>200+</td>
+                    <td>Не доступно</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Вікіпедія — Відеоігри (плаваючий фрейм)</h2>
+        <p>Нижче вбудована стаття з Вікіпедії прямо на нашому сайті:</p>
+        <div class="iframe-wrapper">
+            <iframe
+                src="https://uk.wikipedia.org/wiki/Відеогра"
+                width="100%"
+                height="480"
+                title="Вікіпедія — Відеогра"
+                loading="lazy">
+            </iframe>
         </div>
+    </section>
 
-      <h2>Галерея</h2>
-      <h3>Ігрові картки</h3>
-      <a href="images/game_cards.png" target="_blank">
-        <img src="images/game_cards.png" alt="Ігрові картки — збільшено"
-          width="1024" height="1024" class="img-responsive"
-          style="max-width: 100%; height: auto;">
-      </a>
+</div>
 
-      <h3>Жанри ігор</h3>
-      <a href="images/game_genres.png" target="_blank">
-        <img src="images/game_genres.png" alt="Жанри ігор — зменшено"
-          width="256" height="256" class="img-responsive">
-      </a>
-      </div>
-    </main>
+<footer>
+    <p>
+        &copy; 2026 GameWorld — Автор: <strong>Олександра Осієвська</strong> |
+        <a href="index.html">Головна</a> |
+        <a href="games.html">Ігри</a> |
+        <a href="history.html">Історія</a> |
+        <a href="contact.html">Контакти</a>
+    </p>
+</footer>
 
-    <footer>
-      <p>&copy; 2026 GameWorld — Всі права захищені |
-           <a href="index.html">Головна</a> |
-           <a href="games.html">Ігри</a> |
-           <a href="history.html">Історія</a> |
-           <a href="contact.html">Контакти</a>
-      </p>
-    </footer>
-  </body>
+</body>
 </html>
