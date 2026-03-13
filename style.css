@@ -274,3 +274,86 @@ footer a {
 footer a:hover {
     color: #ec4899;
 }
+
+p strong {
+    color: #06b6d4;
+    letter-spacing: 0.03em;
+}
+
+td a {
+    color: #a78bfa;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px dotted #a78bfa;
+}
+
+li em {
+    color: #10b981;
+    font-style: italic;
+}
+
+section dt {
+    font-size: 1.02rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+section > h2 {
+    border-bottom: 2px solid rgba(139, 92, 246, 0.35);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+section > p {
+    margin-top: 0;
+    color: #c4c6d8;
+}
+
+nav > ul > li > a {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+figure > figcaption {
+    color: #6b6e8a;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+h2 + p {
+    margin-top: 6px;
+    font-size: 1.02rem;
+    color: #b0b3cc;
+}
+
+p + ol {
+    margin-top: 4px;
+    border-top: 1px solid rgba(6, 182, 212, 0.2);
+    padding-top: 6px;
+}
+
+p + ul {
+    margin-top: 4px;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    padding-top: 6px;
+}
+
+h3 + dl {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-radius: 6px;
+    padding: 10px 14px;
+}
+
+h3 ~ p {
+    font-size: 0.97rem;
+    color: #a8abc0;
+    padding-left: 4px;
+}
+
+ol ~ ul {
+    border-left-color: #ec4899;
+}
+
+section ~ section {
+    border-top: 1px solid rgba(139, 92, 246, 0.15);
+}
