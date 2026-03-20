@@ -76,12 +76,6 @@ nav {
     border-bottom: 1px solid rgba(139, 92, 246, 0.3);
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
 nav ul li {
     display: inline-block;
     margin: 4px 8px;
@@ -92,7 +86,7 @@ nav ul li a {
     padding: 8px 16px;
     border: 1px solid rgba(139, 92, 246, 0.4);
     border-radius: 6px;
-    background-color: rgba(139, 92, 246, 0.1);
+    background-color: rgba(92, 118, 246, 0.1);
     color: #e8e8f0;
     text-decoration: none;
 }
@@ -151,8 +145,7 @@ ul {
 }
 
 ul li {
-    margin-bottom: 6px;
-    color: #e8e8f0;              
+    margin-bottom: 6px;             
     font-size: 15px;           
     padding: 2px 0;     
 }
@@ -170,7 +163,6 @@ ol {
 
 ol li {
     margin-bottom: 6px;
-    color: #e8e8f0;
     font-size: 15px;
     padding: 2px 0;
 }
@@ -235,7 +227,7 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: rgba(139, 92, 246, 0.07);
+    background-color: rgba(70, 30, 163, 0.313);
 }
 
 tr:hover td {
@@ -267,7 +259,6 @@ footer {
 }
 
 footer a {
-    color: #8b5cf6;
     text-decoration: none;
 }
 
@@ -314,16 +305,10 @@ nav > ul > li > a {
     letter-spacing: 0.02em;
 }
 
-figure > figcaption {
-    color: #6b6e8a;
-    text-align: center;
-    font-size: 0.88rem;
-}
-
 h2 + p {
     margin-top: 6px;
     font-size: 1.02rem;
-    color: #b0b3cc;
+    color: #67c1ee;
 }
 
 p + ol {
@@ -339,21 +324,7 @@ p + ul {
 }
 
 h3 + dl {
-    background-color: rgba(16, 185, 129, 0.1);
+    background-color: rgba(148, 224, 221, 0.16);
     border-radius: 6px;
     padding: 10px 14px;
-}
-
-h3 ~ p {
-    font-size: 0.97rem;
-    color: #a8abc0;
-    padding-left: 4px;
-}
-
-ol ~ ul {
-    border-left-color: #ec4899;
-}
-
-section ~ section {
-    border-top: 1px solid rgba(139, 92, 246, 0.15);
 }
