@@ -415,3 +415,85 @@ h3 + dl {
 .news-link:active {
     color: #fbbf24; 
 }
+
+/* JavaScript Lab Styles */
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.lab-card {
+    background-color: rgba(6, 182, 212, 0.05);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lab-card h3 {
+    margin-top: 0;
+    color: #8b5cf6;
+}
+
+.btn {
+    background-color: #8b5cf6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: auto;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background-color: #a78bfa;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #8b5cf6;
+    color: #e8e8f0;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(139, 92, 246, 0.2);
+}
+
+.btn-danger {
+    background-color: rgba(239, 68, 68, 0.2);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+}
+
+.btn-danger:hover {
+    background-color: rgba(239, 68, 68, 0.4);
+    color: #fff;
+}
+
+.output-box {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: rgba(15, 17, 30, 0.6);
+    border: 1px dashed rgba(16, 185, 129, 0.5);
+    border-radius: 6px;
+    min-height: 50px;
+}
+
+.doc-write-demo {
+    margin-top: 16px;
+    padding: 10px;
+    background-color: rgba(245, 158, 11, 0.1);
+    border-left: 3px solid #f59e0b;
+    font-size: 0.95em;
+}

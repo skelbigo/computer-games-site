@@ -236,6 +236,89 @@
             </iframe>
         </div>
     </section>
+    <section id="js-lab">
+        <h2>Інтерактивні функції</h2>
+        <div class="lab-grid">
+            <div class="lab-card">
+                <h3>Авторизація Гравця</h3>
+                <p>Ініціалізація сесії за допомогою системних сповіщень</p>
+                <button class="btn" onclick="runInternalScripts()">Запустити</button>
+                <div id="internal-output" class="output-box"></div>
+            </div>
+
+            <div class="lab-card">
+                <h3>Діалог з користувачем</h3>
+                <p>Діалогова система, логіка вибору та циклічні квести</p>
+                <button class="btn btn-secondary" onclick="userDialog()">Почати діалог</button>
+                <div id="dialog-output" class="output-box"></div>
+            </div>
+
+            <div class="lab-card">
+                <h3>Про розробника</h3>
+                <p>Функція з параметрами (значення за замовчуванням)</p>
+                <button class="btn" onclick="showDeveloperInfo('Осієвська', 'Олександра')">Показати інформацію</button>
+                <div id="dev-output" class="output-box"></div>
+            </div>
+
+            <div class="lab-card">
+                <h3>Сортування трофеїв (Loot Logic)</h3>
+                <button class="btn btn-secondary" style="margin-top: auto;" onclick="compareStrings('Еліксир', 'Меч')">Порівняти артефакти "Еліксир" та "Меч"</button>
+            </div>
+
+            <div class="lab-card">
+                <h3>Зміна фону</h3>
+                <p>Управління об'єктом document</p>
+                <button class="btn" onclick="changeBackgroundTemporarily()">Змінити фон</button>
+            </div>
+
+            <div class="lab-card">
+                <h3>Перенаправлення</h3>
+                <p>Управління об'єктом location</p>
+                <button class="btn btn-danger" onclick="redirectToGames()">Перейти до Ігор</button>
+            </div>
+
+            <div class="lab-card" style="grid-column: 1 / -1;">
+                <h3>Менеджмент інвентарю</h3>
+                <p>Динамічне створення, редагування та видалення предметів у сумці гравця</p>
+                <button class="btn" onclick="demonstrateDOM()">Оновити спорядження</button>
+                <div id="dom-demo-area" class="output-box">
+                    <p id="sample-text" style="color: #94a3b8;">Предмет: **Старий воїнський набір**</p>
+                    <ul id="dom-demo-area">
+                        <li>Залізний шолом</li>
+                        <li>Іржавий меч</li> 
+                    </ul>
+                </div>
+                <div id="dom-log" class="output-box" style="margin-top: 10px; font-family: monospace; font-size: 0.9em; min-height: 20px;"></div>
+            </div>
+        </div>
+        
+        <div class="doc-write-demo">
+            <script>
+                document.write("<strong>Демонстрація document.write:</strong> Цей текст згенеровано під час завантаження сторінки.");
+            </script>
+        </div>
+    </section>
+
+    <script>
+        function runInternalScripts() {
+            alert("Це демонстрація функції alert.");
+            let name = prompt("Як вас звати?", "Гість");
+            if (name !== null) {
+                let isReady = confirm(name + ", ви готові продовжити?");
+                let output = document.getElementById("internal-output");
+                if (isReady) {
+                    output.innerHTML = "Користувач <strong>" + name + "</strong> готовий!";
+                } else {
+                    output.innerHTML = "Користувач <strong>" + name + "</strong> не готовий.";
+                }
+            } else {
+                document.getElementById("internal-output").innerHTML = "Діалог скасовано.";
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
     <section>
         <h2>Новини ігрового світу</h2>
         
