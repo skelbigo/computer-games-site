@@ -497,3 +497,205 @@ h3 + dl {
     border-left: 3px solid #f59e0b;
     font-size: 0.95em;
 }
+
+#delegation-list {
+    list-style-type: none;
+    padding-left: 10px;
+    border-left: 3px solid #06b6d4;
+    background-color: rgba(6, 182, 212, 0.05);
+}
+
+#delegation-list li {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    user-select: none;
+}
+
+#delegation-list li:hover {
+    border-color: rgba(6, 182, 212, 0.3);
+    background-color: rgba(6, 182, 212, 0.1);
+}
+
+.active-list-item {
+    background-color: rgba(6, 182, 212, 0.3) !important;
+    font-weight: bold;
+    border-color: rgba(6, 182, 212, 0.6) !important;
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.2);
+}
+
+/* ======== Mouse Lab — Арсенал Героя ======== */
+
+/* Hover items grid */
+.hover-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.hover-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 10px;
+    background-color: rgba(15, 17, 30, 0.7);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    user-select: none;
+}
+
+.hover-item-icon {
+    font-size: 2rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.hover-item-name {
+    font-size: 0.82rem;
+    color: #c4c6d8;
+    text-align: center;
+    font-weight: 600;
+}
+
+.hover-item-rarity {
+    font-size: 0.72rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+}
+
+/* Rarity colors */
+.rarity-common   { color: #a0a3bd; background: rgba(160,163,189,0.12); border: 1px solid rgba(160,163,189,0.3); }
+.rarity-rare     { color: #06b6d4; background: rgba(6,182,212,0.12);   border: 1px solid rgba(6,182,212,0.4); }
+.rarity-epic     { color: #8b5cf6; background: rgba(139,92,246,0.12);  border: 1px solid rgba(139,92,246,0.4); }
+.rarity-legendary{ color: #f59e0b; background: rgba(245,158,11,0.12);  border: 1px solid rgba(245,158,11,0.5); }
+
+/* Hover state — applied via JS using mouseover/mouseout */
+.hover-item.item-hovered {
+    transform: translateY(-4px) scale(1.04);
+    background-color: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.7);
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.35);
+}
+
+.hover-item.item-hovered .hover-item-icon {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+.rarity-legendary.item-hovered-legendary,
+.hover-item.item-hovered .rarity-legendary {
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+/* Drag & Drop area */
+.drag-area-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.drag-zone {
+    flex: 1;
+    min-width: 180px;
+    background-color: rgba(15, 17, 30, 0.7);
+    border: 2px dashed rgba(139, 92, 246, 0.4);
+    border-radius: 10px;
+    padding: 16px;
+    min-height: 160px;
+}
+
+.drag-zone h4 {
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+    color: #8b5cf6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.drag-target-zone {
+    border-color: rgba(6, 182, 212, 0.4);
+    background-color: rgba(6, 182, 212, 0.04);
+}
+
+.drag-target-zone.drag-over {
+    border-color: #06b6d4;
+    background-color: rgba(6, 182, 212, 0.12);
+    box-shadow: 0 0 16px rgba(6, 182, 212, 0.25) inset;
+}
+
+.drag-item {
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background-color: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #e8e8f0;
+    cursor: grab;
+    user-select: none;
+    transition: background-color 0.15s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.drag-item:hover {
+    background-color: rgba(139, 92, 246, 0.22);
+    border-color: rgba(139, 92, 246, 0.6);
+}
+
+.drag-item.is-dragging {
+    opacity: 0.35;
+    border-style: dashed;
+}
+
+/* The floating clone while dragging */
+.drag-clone {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    padding: 10px 14px;
+    background-color: rgba(139, 92, 246, 0.85);
+    border: 2px solid #a78bfa;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transform: rotate(-3deg);
+    white-space: nowrap;
+    transition: transform 0.05s;
+}
+
+.drop-placeholder {
+    color: #6b6e8a;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px 0;
+    font-style: italic;
+}
+
+.drag-arrow {
+    font-size: 2rem;
+    color: rgba(139, 92, 246, 0.5);
+    align-self: center;
+    padding: 0 4px;
+}
+
+/* Items dropped into equipment zone */
+.drag-item.equipped {
+    background-color: rgba(6, 182, 212, 0.15);
+    border-color: rgba(6, 182, 212, 0.5);
+    cursor: grab;
+}
+
+.drag-item.equipped:hover {
+    background-color: rgba(6, 182, 212, 0.25);
+    border-color: #06b6d4;
+}

@@ -236,88 +236,113 @@
             </iframe>
         </div>
     </section>
+
     <section id="js-lab">
-        <h2>Інтерактивні функції</h2>
+        <h2>Панель Керування Героєм</h2>
         <div class="lab-grid">
-            <div class="lab-card">
-                <h3>Авторизація Гравця</h3>
-                <p>Ініціалізація сесії за допомогою системних сповіщень</p>
-                <button class="btn" onclick="runInternalScripts()">Запустити</button>
-                <div id="internal-output" class="output-box"></div>
-            </div>
-
-            <div class="lab-card">
-                <h3>Діалог з користувачем</h3>
-                <p>Діалогова система, логіка вибору та циклічні квести</p>
-                <button class="btn btn-secondary" onclick="userDialog()">Почати діалог</button>
-                <div id="dialog-output" class="output-box"></div>
-            </div>
-
-            <div class="lab-card">
-                <h3>Про розробника</h3>
-                <p>Функція з параметрами (значення за замовчуванням)</p>
-                <button class="btn" onclick="showDeveloperInfo('Осієвська', 'Олександра')">Показати інформацію</button>
-                <div id="dev-output" class="output-box"></div>
-            </div>
-
-            <div class="lab-card">
-                <h3>Сортування трофеїв (Loot Logic)</h3>
-                <button class="btn btn-secondary" style="margin-top: auto;" onclick="compareStrings('Еліксир', 'Меч')">Порівняти артефакти "Еліксир" та "Меч"</button>
-            </div>
-
-            <div class="lab-card">
-                <h3>Зміна фону</h3>
-                <p>Управління об'єктом document</p>
-                <button class="btn" onclick="changeBackgroundTemporarily()">Змінити фон</button>
-            </div>
-
-            <div class="lab-card">
-                <h3>Перенаправлення</h3>
-                <p>Управління об'єктом location</p>
-                <button class="btn btn-danger" onclick="redirectToGames()">Перейти до Ігор</button>
-            </div>
-
             <div class="lab-card" style="grid-column: 1 / -1;">
-                <h3>Менеджмент інвентарю</h3>
-                <p>Динамічне створення, редагування та видалення предметів у сумці гравця</p>
-                <button class="btn" onclick="demonstrateDOM()">Оновити спорядження</button>
-                <div id="dom-demo-area" class="output-box">
-                    <p id="sample-text" style="color: #94a3b8;">Предмет: **Старий воїнський набір**</p>
-                    <ul id="dom-demo-area">
-                        <li>Залізний шолом</li>
-                        <li>Іржавий меч</li> 
-                    </ul>
+                <h3>Майстерня Бойових Дій</h3>
+                <p>Налаштування відгуку зброї та заклинань різними методами.</p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button id="btn-attr" class="btn" onclick="mouseEventHandler1()">Сувій магії</button>
+                    <button id="btn-prop" class="btn btn-secondary">Вроджена сила</button>
+                    <button id="btn-addl" class="btn">Магічне комбо</button>
+                    <button id="btn-obj" class="btn btn-secondary">Майстер ритуалів</button>
+                    <button id="btn-rm-obj" class="btn btn-danger">Розвіяти чари</button>
                 </div>
-                <div id="dom-log" class="output-box" style="margin-top: 10px; font-family: monospace; font-size: 0.9em; min-height: 20px;"></div>
+                <div id="mouse-events-output" class="output-box" style="margin-top: 15px; font-family: monospace; font-size: 0.9em; min-height: 40px; color: #a0a3bd;"></div>
             </div>
-        </div>
-        
-        <div class="doc-write-demo">
-            <script>
-                document.write("<strong>Демонстрація document.write:</strong> Цей текст згенеровано під час завантаження сторінки.");
-            </script>
+
+            <div class="lab-card">
+                <h3>Книга заклинань (Гримуар)</h3>
+                <p>Оберіть активну здібність зі списку, щоб сконцентрувати на ній магічну енергію.</p>
+                <ul id="delegation-list">
+                    <li>🔥 Вогняна куля</li>
+                    <li>❄️ Крижана стріла</li>
+                    <li>⚡ Удар блискавки</li>
+                    <li>🛡️ Магічний щит</li>
+                </ul>
+            </div>
+
+            <div class="lab-card">
+                <h3>Системний термінал мандрівника</h3>
+                <p>Глобальний контроль ігрових процесів через атрибути дій.</p>
+                <div id="behavior-menu" style="display: flex; gap: 10px; flex-direction: column;">
+                    <button class="btn" data-action="save">💾 Зберегти гру</button>
+                    <button class="btn btn-secondary" data-action="load">📂 Завантажити гру</button>
+                    <button class="btn btn-danger" data-action="exit">🚪 Вийти з гри</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <script>
-        function runInternalScripts() {
-            alert("Це демонстрація функції alert.");
-            let name = prompt("Як вас звати?", "Гість");
-            if (name !== null) {
-                let isReady = confirm(name + ", ви готові продовжити?");
-                let output = document.getElementById("internal-output");
-                if (isReady) {
-                    output.innerHTML = "Користувач <strong>" + name + "</strong> готовий!";
-                } else {
-                    output.innerHTML = "Користувач <strong>" + name + "</strong> не готовий.";
-                }
-            } else {
-                document.getElementById("internal-output").innerHTML = "Діалог скасовано.";
-            }
-        }
-    </script>
+    <section id="mouse-lab">
+        <h2>🏹 Арсенал Героя</h2>
+
+        <div class="lab-card" style="margin-bottom: 20px;">
+            <h3>✨ Інспекція предметів</h3>
+            <p>Наведіть курсор на предмети інвентаря — вони засяють магічним світлом. Подія фіксується у журналі нижче.</p>
+            <div id="hover-items-container" class="hover-items-grid">
+                <div class="hover-item" data-item="sword">
+                    <span class="hover-item-icon">⚔️</span>
+                    <span class="hover-item-name">Меч Дракона</span>
+                    <span class="hover-item-rarity rarity-legendary">Легендарний</span>
+                </div>
+                <div class="hover-item" data-item="shield">
+                    <span class="hover-item-icon">🛡️</span>
+                    <span class="hover-item-name">Щит Світанку</span>
+                    <span class="hover-item-rarity rarity-epic">Епічний</span>
+                </div>
+                <div class="hover-item" data-item="potion">
+                    <span class="hover-item-icon">🧪</span>
+                    <span class="hover-item-name">Зілля Здоров'я</span>
+                    <span class="hover-item-rarity rarity-common">Звичайний</span>
+                </div>
+                <div class="hover-item" data-item="ring">
+                    <span class="hover-item-icon">💍</span>
+                    <span class="hover-item-name">Перстень Тіней</span>
+                    <span class="hover-item-rarity rarity-rare">Рідкісний</span>
+                </div>
+                <div class="hover-item" data-item="scroll">
+                    <span class="hover-item-icon">📜</span>
+                    <span class="hover-item-name">Сувій Вогню</span>
+                    <span class="hover-item-rarity rarity-epic">Епічний</span>
+                </div>
+                <div class="hover-item" data-item="helmet">
+                    <span class="hover-item-icon">⛑️</span>
+                    <span class="hover-item-name">Шолом Відваги</span>
+                    <span class="hover-item-rarity rarity-rare">Рідкісний</span>
+                </div>
+            </div>
+            <div id="hover-log" class="output-box" style="margin-top: 15px; font-family: monospace; font-size: 0.85em; max-height: 150px; overflow-y: auto;">
+                <div style="color: #6b6e8a;">Журнал подій миші...</div>
+            </div>
+        </div>
+
+        <div class="lab-card">
+            <h3>🎒 Перетягування спорядження</h3>
+            <p>Перетягніть предмети з інвентаря у слот екіпірування. Натисніть мишу та тягніть.</p>
+            <div class="drag-area-wrapper">
+                <div class="drag-zone" id="drag-source">
+                    <h4>📦 Інвентар</h4>
+                    <div class="drag-item" id="drag-sword">⚔️ Вогняний Меч</div>
+                    <div class="drag-item" id="drag-bow">🏹 Лук Ельфів</div>
+                    <div class="drag-item" id="drag-staff">🪄 Посох Мерліна</div>
+                </div>
+                <div class="drag-arrow">⟶</div>
+                <div class="drag-zone drag-target-zone" id="drag-target">
+                    <h4>🎯 Екіпірування</h4>
+                    <div class="drop-placeholder">Перетягніть сюди предмет</div>
+                </div>
+            </div>
+            <div id="drag-log" class="output-box" style="margin-top: 15px; font-family: monospace; font-size: 0.85em; max-height: 120px; overflow-y: auto;">
+                <div style="color: #6b6e8a;">Журнал перетягування...</div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
+
 
     <section>
         <h2>Новини ігрового світу</h2>
