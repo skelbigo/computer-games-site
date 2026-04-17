@@ -424,6 +424,113 @@ h3 + dl {
     margin-top: 16px;
 }
 
+.hero-display {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e8e8f0;
+    background: rgba(15, 17, 30, 0.8);
+    border: 2px dashed #8b5cf6;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-display.action-active {
+    border-style: solid;
+    transform: scale(1.02);
+}
+
+.hero-avatar-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    flex-shrink: 0;
+}
+
+.hero-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.hero-status-text {
+    font-size: 1rem;
+    text-align: left;
+    color: #d9d9e6;
+}
+
+.hero-display.state-info {
+    border-color: rgba(6, 182, 212, 0.8);
+    background: rgba(6, 182, 212, 0.08);
+}
+
+.hero-display.state-success {
+    border-color: rgba(16, 185, 129, 0.8);
+    background: rgba(16, 185, 129, 0.08);
+}
+
+.hero-display.state-danger {
+    border-color: rgba(239, 68, 68, 0.8);
+    background: rgba(239, 68, 68, 0.08);
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.spell-btn {
+    margin-top: 0;
+}
+
+.active-spell-info,
+.behavior-status {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+.active-spell-info {
+    background: rgba(6, 182, 212, 0.1);
+    border-color: rgba(6, 182, 212, 0.35);
+}
+
+.behavior-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.behavior-success {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.behavior-info {
+    background: rgba(6, 182, 212, 0.12);
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
+.behavior-danger {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
 .lab-card {
     background-color: rgba(6, 182, 212, 0.05);
     border: 1px solid rgba(6, 182, 212, 0.3);

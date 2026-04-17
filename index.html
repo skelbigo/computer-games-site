@@ -238,41 +238,67 @@
     </section>
 
     <section id="js-lab">
-        <h2>Панель Керування Героєм</h2>
+        <h2>⚔️ Панель Керування Героєм</h2>
         <div class="lab-grid">
+
+            <!-- Повноширокий блок: герой + кнопки -->
             <div class="lab-card" style="grid-column: 1 / -1;">
-                <h3>Майстерня Бойових Дій</h3>
-                <p>Налаштування відгуку зброї та заклинань різними методами.</p>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <button id="btn-attr" class="btn" onclick="mouseEventHandler1()">Сувій магії</button>
-                    <button id="btn-prop" class="btn btn-secondary">Вроджена сила</button>
-                    <button id="btn-addl" class="btn">Магічне комбо</button>
-                    <button id="btn-obj" class="btn btn-secondary">Майстер ритуалів</button>
-                    <button id="btn-rm-obj" class="btn btn-danger">Розвіяти чари</button>
+                <h3>🧙 Майстерня Бойових Дій</h3>
+                <p>Натискайте кнопки — герой реагуватиме і змінюватиме стан залежно від способу прив'язки події.</p>
+
+                <div id="hero-display" class="hero-display">
+                    <div class="hero-avatar-wrap">
+                        <span id="hero-icon" class="hero-icon">🧙‍♂️</span>
+                    </div>
+                    <div id="hero-status" class="hero-status-text">Мандрівник очікує вказівок...</div>
                 </div>
-                <div id="mouse-events-output" class="output-box" style="margin-top: 15px; font-family: monospace; font-size: 0.9em; min-height: 40px; color: #a0a3bd;"></div>
+
+                <div class="btn-row">
+                    <button id="btn-attr" class="btn spell-btn" onclick="castSpellAttr()">
+                        📜 Сувій магії
+                    </button>
+                    <button id="btn-prop" class="btn btn-secondary spell-btn">
+                        💪 Вроджена сила
+                    </button>
+                    <button id="btn-addl" class="btn spell-btn">
+                        ✨ Магічне комбо
+                    </button>
+                    <button id="btn-obj" class="btn btn-secondary spell-btn">
+                        🔮 Майстер ритуалів
+                    </button>
+                    <button id="btn-rm-obj" class="btn btn-danger spell-btn">
+                        💨 Розвіяти чари
+                    </button>
+                </div>
             </div>
 
+            <!-- Книга заклинань -->
             <div class="lab-card">
-                <h3>Книга заклинань (Гримуар)</h3>
-                <p>Оберіть активну здібність зі списку, щоб сконцентрувати на ній магічну енергію.</p>
+                <h3>📖 Книга заклинань</h3>
+                <p>Клікніть на здібність — вона засвітиться та стане активною.</p>
                 <ul id="delegation-list">
-                    <li>🔥 Вогняна куля</li>
-                    <li>❄️ Крижана стріла</li>
-                    <li>⚡ Удар блискавки</li>
-                    <li>🛡️ Магічний щит</li>
+                    <li data-spell="fire">🔥 Вогняна куля</li>
+                    <li data-spell="ice">❄️ Крижана стріла</li>
+                    <li data-spell="lightning">⚡ Удар блискавки</li>
+                    <li data-spell="shield">🛡️ Магічний щит</li>
                 </ul>
+                <div id="active-spell-info" class="active-spell-info" style="display:none;">
+                    Активно: <strong id="active-spell-name"></strong>
+                </div>
             </div>
 
+            <!-- Командний центр -->
             <div class="lab-card">
-                <h3>Системний термінал мандрівника</h3>
-                <p>Глобальний контроль ігрових процесів через атрибути дій.</p>
-                <div id="behavior-menu" style="display: flex; gap: 10px; flex-direction: column;">
+                <h3>⚙️ Командний центр</h3>
+                <p>Оберіть команду в меню — герой одразу виконає потрібну дію.</p>
+                <div id="behavior-menu" class="behavior-menu-grid">
                     <button class="btn" data-action="save">💾 Зберегти гру</button>
                     <button class="btn btn-secondary" data-action="load">📂 Завантажити гру</button>
                     <button class="btn btn-danger" data-action="exit">🚪 Вийти з гри</button>
                 </div>
+                <div id="behavior-status" class="behavior-status" style="display:none;"></div>
             </div>
+
         </div>
     </section>
 
@@ -281,7 +307,7 @@
 
         <div class="lab-card" style="margin-bottom: 20px;">
             <h3>✨ Інспекція предметів</h3>
-            <p>Наведіть курсор на предмети інвентаря — вони засяють магічним світлом. Подія фіксується у журналі нижче.</p>
+            <p>Наведіть курсор на предмети інвентаря — вони засяють магічним світлом.</p>
             <div id="hover-items-container" class="hover-items-grid">
                 <div class="hover-item" data-item="sword">
                     <span class="hover-item-icon">⚔️</span>
@@ -314,9 +340,6 @@
                     <span class="hover-item-rarity rarity-rare">Рідкісний</span>
                 </div>
             </div>
-            <div id="hover-log" class="output-box" style="margin-top: 15px; font-family: monospace; font-size: 0.85em; max-height: 150px; overflow-y: auto;">
-                <div style="color: #6b6e8a;">Журнал подій миші...</div>
-            </div>
         </div>
 
         <div class="lab-card">
@@ -334,9 +357,6 @@
                     <h4>🎯 Екіпірування</h4>
                     <div class="drop-placeholder">Перетягніть сюди предмет</div>
                 </div>
-            </div>
-            <div id="drag-log" class="output-box" style="margin-top: 15px; font-family: monospace; font-size: 0.85em; max-height: 120px; overflow-y: auto;">
-                <div style="color: #6b6e8a;">Журнал перетягування...</div>
             </div>
         </div>
     </section>

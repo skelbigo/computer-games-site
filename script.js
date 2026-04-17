@@ -123,30 +123,44 @@ function demonstrateDOM() {
     }
 }
 
-function mouseLog(msg) {
-    let out = document.getElementById("mouse-events-output");
-    if(out) out.innerHTML += `<div>${msg}</div>`;
+function setHeroState(message, icon = "🧙‍♂️", tone = "info") {
+    const heroStatus = document.getElementById("hero-status");
+    const heroIcon = document.getElementById("hero-icon");
+    const heroDisplay = document.getElementById("hero-display");
+
+    if (!heroStatus || !heroIcon || !heroDisplay) return;
+
+    heroStatus.textContent = message;
+    heroIcon.textContent = icon;
+    heroDisplay.classList.remove("state-info", "state-success", "state-danger");
+    heroDisplay.classList.add(`state-${tone}`);
+    heroDisplay.classList.add("action-active");
+
+    clearTimeout(setHeroState.resetTimer);
+    setHeroState.resetTimer = setTimeout(() => {
+        heroDisplay.classList.remove("action-active");
+    }, 350);
 }
 
-function mouseEventHandler1() {
-    mouseLog("<span style='color: #10b981;'><strong>[Атрибут]</strong> Клік по кнопці (onclick атрибут).</span>");
+function castSpellAttr() {
+    setHeroState("Сувій активовано — герой застосував потужне заклинання.", "📜", "success");
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     let btnProp = document.getElementById("btn-prop");
     if(btnProp) {
         btnProp.onclick = function() {
-            mouseLog("<span style='color: #06b6d4;'><strong>[Властивість]</strong> Клік по кнопці (element.onclick).</span>");
+            setHeroState("Вроджена сила активована — герой готовий до наступного кроку.", "💪", "info");
         };
     }
 
     let btnAddl = document.getElementById("btn-addl");
     if(btnAddl) {
         btnAddl.addEventListener("click", function() {
-            mouseLog("<span style='color: #8b5cf6;'><strong>[addEventListener 1]</strong> Відпрацював перший обробник.</span>");
+            setHeroState("Комбо-удар #1: перша хвиля сили влучила в ціль.", "✨", "success");
         });
         btnAddl.addEventListener("click", function() {
-            mouseLog("<span style='color: #8b5cf6;'><strong>[addEventListener 2]</strong> Відпрацював другий обробник цієї ж події.</span>");
+            setHeroState("Комбо-удар #2: друга хвиля миттєво підсилила атаку.", "⚡", "success");
         });
     }
 
@@ -155,7 +169,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let myHandlerObj = {
         name: "GameHandlerObject",
         handleEvent(event) {
-            mouseLog(`<span style='color: #f59e0b;'><strong>[Об'єкт-обробник]</strong> Подія: ${event.type}, поточний елемент: ${event.currentTarget.id}</span>`);
+            setHeroState(
+                `Ритуал активовано на кнопці «Майстер ритуалів».`,
+                "🔮",
+                "info"
+            );
         }
     };
 
@@ -166,12 +184,14 @@ document.addEventListener("DOMContentLoaded", function() {
         if(btnRmObj) {
             btnRmObj.addEventListener("click", function() {
                 btnObj.removeEventListener("click", myHandlerObj);
-                mouseLog("<span style='color: #ef4444;'><strong>[removeEventListener]</strong> Об'єкт-обробник успішно видалено з попередньої кнопки. Тепер вона не реагуватиме.</span>");
+                setHeroState("Чари розвіяно: ритуал вимкнено для цієї кнопки.", "💨", "danger");
             });
         }
     }
 
     let delegationList = document.getElementById("delegation-list");
+    let activeSpellInfo = document.getElementById("active-spell-info");
+    let activeSpellName = document.getElementById("active-spell-name");
     if(delegationList) {
         let activeLi = null;
         delegationList.onclick = function(event) {
@@ -185,21 +205,47 @@ document.addEventListener("DOMContentLoaded", function() {
             
             activeLi = target;
             activeLi.classList.add('active-list-item');
-            
-            mouseLog(`<strong>[Делегування]</strong> Виділено елемент: ${activeLi.textContent}`);
+
+            if (activeSpellInfo && activeSpellName) {
+                activeSpellName.textContent = activeLi.textContent.trim();
+                activeSpellInfo.style.display = "block";
+            }
+
+            setHeroState(`Активне заклинання: ${activeLi.textContent.trim()}`, "🪄", "info");
         };
     }
 
     let behaviorMenu = document.getElementById("behavior-menu");
+    let behaviorStatus = document.getElementById("behavior-status");
     if(behaviorMenu) {
+        function updateBehaviorStatus(message, toneClass) {
+            if (!behaviorStatus) return;
+            behaviorStatus.textContent = message;
+            behaviorStatus.style.display = "block";
+            behaviorStatus.classList.remove("behavior-success", "behavior-info", "behavior-danger");
+            behaviorStatus.classList.add(toneClass);
+        }
+
         let menuActions = {
-            save: () => mouseLog("<em>[Патерн Behavior]</em> Виклик методу: <strong style='color:#10b981'>Збереження гри...</strong>"),
-            load: () => mouseLog("<em>[Патерн Behavior]</em> Виклик методу: <strong style='color:#06b6d4'>Завантаження сейву...</strong>"),
-            exit: () => mouseLog("<em>[Патерн Behavior]</em> Виклик методу: <strong style='color:#ef4444'>Вихід з гри!</strong>")
+            save: () => {
+                updateBehaviorStatus("Гру збережено успішно.", "behavior-success");
+                setHeroState("Команда меню: збереження виконано.", "💾", "success");
+            },
+            load: () => {
+                updateBehaviorStatus("Сейв завантажено.", "behavior-info");
+                setHeroState("Команда меню: дані завантажено.", "📂", "info");
+            },
+            exit: () => {
+                updateBehaviorStatus("Виконано вихід у головне меню.", "behavior-danger");
+                setHeroState("Команда меню: вихід виконано.", "🚪", "danger");
+            }
         };
 
         behaviorMenu.addEventListener("click", function(event) {
-            let action = event.target.dataset.action;
+            let button = event.target.closest("button[data-action]");
+            if (!button) return;
+
+            let action = button.dataset.action;
             if (action && menuActions[action]) {
                 menuActions[action](); 
             }
@@ -236,8 +282,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hoverContainer) {
         hoverContainer.addEventListener("mouseover", function (e) {
-            const target      = e.target;          
-            const relTarget   = e.relatedTarget;  
+            const target      = e.target;
+            const relTarget   = e.relatedTarget;
 
             const card = target.closest ? target.closest(".hover-item") : null;
             if (card) {
@@ -246,9 +292,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 const fromLabel = getItemLabel(relTarget);
                 const toLabel   = getItemLabel(target);
                 logHover(
-                    `<span style='color:#10b981'>▶ mouseover</span> ` +
-                    `<strong style='color:#e8e8f0'>event.target:</strong> <span style='color:#06b6d4'>${toLabel}</span> | ` +
-                    `<strong style='color:#e8e8f0'>relatedTarget:</strong> <span style='color:#a78bfa'>${fromLabel}</span>`
+                    `<span style='color:#10b981'>▶ Курсор наведено</span> ` +
+                    `<strong style='color:#e8e8f0'>Поточний предмет:</strong> <span style='color:#06b6d4'>${toLabel}</span> | ` +
+                    `<strong style='color:#e8e8f0'>Звідки перейшов курсор:</strong> <span style='color:#a78bfa'>${fromLabel}</span>`
                 );
             }
         });
@@ -266,9 +312,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const fromLabel = getItemLabel(target);
                     const toLabel   = getItemLabel(relTarget);
                     logHover(
-                        `<span style='color:#ef4444'>◀ mouseout </span> ` +
-                        `<strong style='color:#e8e8f0'>event.target:</strong> <span style='color:#06b6d4'>${fromLabel}</span> | ` +
-                        `<strong style='color:#e8e8f0'>relatedTarget:</strong> <span style='color:#a78bfa'>${toLabel}</span>`
+                        `<span style='color:#ef4444'>◀ Курсор прибрано</span> ` +
+                        `<strong style='color:#e8e8f0'>Предмет:</strong> <span style='color:#06b6d4'>${fromLabel}</span> | ` +
+                        `<strong style='color:#e8e8f0'>Куди перейшов курсор:</strong> <span style='color:#a78bfa'>${toLabel}</span>`
                     );
                 }
             }
@@ -328,7 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dragClone = createClone(item, e.clientX, e.clientY);
 
         logDrag(
-            `<span style='color:#8b5cf6'>⬇ mousedown</span> — схоплено: ` +
+            `<span style='color:#8b5cf6'>⬇ Предмет взято</span> — схоплено: ` +
             `<strong style='color:#e8e8f0'>${item.textContent.trim()}</strong>`
         );
 
@@ -369,14 +415,14 @@ document.addEventListener("DOMContentLoaded", function () {
             dragTarget.appendChild(draggedItem);
 
             logDrag(
-                `<span style='color:#10b981'>✔ mouseup</span> — екіпіровано: ` +
+                `<span style='color:#10b981'>✔ Предмет встановлено</span> — екіпіровано: ` +
                 `<strong style='color:#e8e8f0'>${draggedItem.textContent.trim()}</strong> ` +
                 `<span style='color:#06b6d4'>→ екіпірування</span>`
             );
         } else {
             draggedItem.classList.remove("is-dragging");
             logDrag(
-                `<span style='color:#ef4444'>✖ mouseup</span> — скасовано, предмет повернуто ` +
+                `<span style='color:#ef4444'>✖ Дію скасовано</span> — предмет повернуто ` +
                 `<span style='color:#a78bfa'>(поза зоною)</span>`
             );
         }
